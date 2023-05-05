@@ -1,0 +1,3 @@
+schemas/* @ONSdigital/eq-runner @ONSdigital/eq-author @ONSdigital/sdx @ONSdigital/sds
+examples/* @ONSdigital/eq-runner @ONSdigital/eq-author @ONSdigital/sdx @ONSdigital/sds
+docs/* @ONSdigital/eq-runner @ONSdigital/eq-author @ONSdigital/sdx @ONSdigital/sds
