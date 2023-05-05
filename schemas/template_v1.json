@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "<survey-name>.json",
+  "title": "SDS schema for the <survey-name> survey",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "v1",
+      "description": "Version of the schema spec"
+    },
+    "key_field": {
+      "const": "ru_ref",
+      "description": "The name of the key field for the top level data"
+    },
+    "ru_ref": {
+      "type": "string",
+      "description": "The reporting unit reference without the check letter appended",
+      "minLength": 11,
+      "pattern": "^[a-zA-Z0-9]+$",
+      "examples": ["34942807969"]
+    },
+    "items": {
+      "type": "object",
+      "properties": {
+        "<some-name>": {
+          "type": "object",
+          "properties": {
+            "key_field": {
+              "const": "identifier",
+              "description": "The name to key field for the items"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {},
+                "required": []
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": ["key_field", "values"]
+        }
+      },
+      "additionalProperties": false,
+      "required": ["<some-name>"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["schema_version", "key_field", "ru_ref"]
+}

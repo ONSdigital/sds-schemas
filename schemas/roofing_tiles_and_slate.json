@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "roofing_tiles_and_slate.json",
+  "title": "SDS schema for the Roofing Tiles + Slate survey",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "v1",
+      "description": "Version of the schema spec"
+    },
+    "key_field": {
+      "const": "ru_ref",
+      "description": "The name of the key field for the top level data"
+    },
+    "ru_ref": {
+      "type": "string",
+      "description": "The reporting unit reference without the check letter appended",
+      "minLength": 11,
+      "pattern": "^[a-zA-Z0-9]+$",
+      "examples": ["34942807969"]
+    },
+    "items": {
+      "type": "object",
+      "properties": {
+        "local_units": {
+          "type": "object",
+          "properties": {
+            "key_field": {
+              "const": "lu_ref",
+              "description": "The name to key field for the local units"
+            },
+            "values": {
+              "type": "array",
+              "description": "The data about each item",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "lu_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The local unit reference",
+                    "examples": ["3340224"]
+                  },
+                  "lu_name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Name of the local unit",
+                    "examples": ["STUBBS BUILDING PRODUCTS LTD"]
+                  },
+                  "lu_address": {
+                    "type": "array",
+                    "description": "The fields of the address for the local unit",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "examples": [
+                      [
+                        "WELLINGTON ROAD",
+                        "LOCHMABEN",
+                        "SWINDON",
+                        "BEDS",
+                        "GLOS",
+                        "DE41 2WA"
+                      ]
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["lu_ref", "lu_name", "lu_address"]
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": ["key_field", "values"]
+        }
+      },
+      "additionalProperties": false,
+      "required": ["local_units"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["schema_version", "key_field", "items", "ru_ref"]
+}
