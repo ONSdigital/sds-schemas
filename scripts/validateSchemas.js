@@ -25,12 +25,26 @@ const schemaDefinitionJsonToExamplesGlob = {
     "examples/roofing_tiles_and_slate/*.json",
 };
 
-const validateSchemaForFile = (fileName, baseSchema, schemaType) => {
+const validateSchemaForFile = (fileName, baseSchema) => {
   const validate = ajValidator.compile(baseSchema);
 
   const jsonData = JSON.parse(fs.readFileSync(fileName));
   const result = validate(jsonData);
   if (result) {
+    // Validate property names
+    const errors = validateListNameNotUsedAtTopLevel(jsonData);
+
+    if (errors.length) {
+      console.error(foregroundRed, `\n---\n${fileName} - FAILED`);
+      console.dir(
+        { Errors: errors },
+        {
+          depth: null,
+        }
+      );
+      return false;
+    }
+
     console.log(foregroundGreen, `${fileName} - PASSED`);
     return true;
   }
@@ -38,6 +52,28 @@ const validateSchemaForFile = (fileName, baseSchema, schemaType) => {
   console.error(foregroundRed, `\n---\n${fileName} - FAILED`);
   console.dir(validate.errors, { depth: null });
   return false;
+};
+
+const validateListNameNotUsedAtTopLevel = (jsonData) => {
+  /**
+   * This function validates:
+   *  - properties used in "items" (list names) cannot be used as top level properties
+   */
+  const errors = [];
+
+  const topLevelKeys = Object.keys(jsonData);
+  if (topLevelKeys.includes("items")) {
+    const itemsKeys = Object.keys(jsonData.items);
+    for (const key of itemsKeys) {
+      if (topLevelKeys.includes(key)) {
+        errors.push(
+          `"${key}" is used both at the top level and inside "items". They are mutually exclusive.`
+        );
+      }
+    }
+  }
+
+  return errors;
 };
 
 const validateSchemas = (schemaDefinitionFile, filepathOrGlob) => {
@@ -63,11 +99,7 @@ const validateSchemas = (schemaDefinitionFile, filepathOrGlob) => {
   );
 
   files.forEach((file) => {
-    const isValid = validateSchemaForFile(
-      file,
-      baseSchema,
-      schemaDefinitionFile
-    );
+    const isValid = validateSchemaForFile(file, baseSchema);
 
     if (isValid === true) {
       passed++;
