@@ -16,7 +16,7 @@ At the top level, additional supplementary data can be added. However, currently
 
 ### Repeating Items
 
-Repeating items are any bits of data that have the same sematic structure but contain different data. For example, a list of employees, companies, products etc.
+Repeating items are any bits of data that have the same semantic structure but contain different data. For example, a list of employees, companies, products etc.
 This is used to support repeating/looping features in eQ Runner. `items` are used as `lists` in runner, therefore `items` allow you to use any `list` feature in eQ Runner such as Looping and Repeating sections.
 
 Each top-level property of `items` is considered a `list`. Each property will represent a list in eQ Runner. For example, `items.employees` will be a list of employees. 
