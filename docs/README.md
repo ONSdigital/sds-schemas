@@ -4,7 +4,7 @@ This document describes the general structure that all supplementary data sets s
 
 ## Schema
 
-v1 Template: [template_v1.json](schemas/template_v1.json)
+v1 Template: [template_v1.json](/schemas/template_v1.json)
 
 | Path                           | Description                                                                                                                                    | Mandatory |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
