@@ -8,13 +8,9 @@
       "const": "v1",
       "description": "Version of the schema spec"
     },
-    "key_field": {
-      "const": "ru_ref",
-      "description": "The name of the key field for the top level data"
-    },
-    "ru_ref": {
+    "identifier": {
       "type": "string",
-      "description": "The reporting unit reference without the check letter appended",
+      "description": "The unique top-level identifier. This is the reporting unit reference without the check letter appended",
       "minLength": 11,
       "pattern": "^[a-zA-Z0-9]+$",
       "examples": ["34942807969"]
@@ -44,171 +40,162 @@
       "type": "object",
       "properties": {
         "products": {
-          "type": "object",
-          "properties": {
-            "key_field": {
-              "const": "identifier",
-              "description": "The name to key field for the products"
-            },
-            "values": {
-              "type": "array",
-              "items": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The identifier for the product. This is the same as answer code for value of sales",
+                "examples": ["89929001"]
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The product name",
+                "examples": [
+                  "Articles and equipment for sports or outdoor games"
+                ]
+              },
+              "cn_codes": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The CN codes for the product",
+                "examples": ["2504 + 250610 + 2512 + 2519 + 2524"]
+              },
+              "guidance_include": {
                 "type": "object",
+                "description": "Content for the 'Include' guidance panel",
                 "properties": {
-                  "identifier": {
+                  "title": {
                     "type": "string",
+                    "description": "The title of the 'Include' panel",
                     "minLength": 1,
-                    "description": "The identifier for the product. This is the same as answer code for value of sales",
-                    "examples": ["89929001"]
+                    "examples": ["Include"]
                   },
-                  "name": {
-                    "type": "string",
-                    "minLength": 1,
-                    "description": "The product name",
+                  "list": {
+                    "type": "array",
+                    "description": "A list of bullet points to show on the 'Include' guidance panel",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": { "type": "string", "minLength": 1 },
                     "examples": [
-                      "Articles and equipment for sports or outdoor games"
+                      "for children's playgrounds",
+                      "swimming pools and paddling pools"
                     ]
-                  },
-                  "cn_codes": {
-                    "type": "string",
-                    "minLength": 1,
-                    "description": "The CN codes for the product",
-                    "examples": ["2504 + 250610 + 2512 + 2519 + 2524"]
-                  },
-                  "guidance_include": {
-                    "type": "object",
-                    "description": "Content for the 'Include' guidance panel",
-                    "properties": {
-                      "title": {
-                        "type": "string",
-                        "description": "The title of the 'Include' panel",
-                        "minLength": 1,
-                        "examples": ["Include"]
-                      },
-                      "list": {
-                        "type": "array",
-                        "description": "A list of bullet points to show on the 'Include' guidance panel",
-                        "minItems": 1,
-                        "uniqueItems": true,
-                        "items": { "type": "string", "minLength": 1 },
-                        "examples": [
-                          "for children's playgrounds",
-                          "swimming pools and paddling pools"
-                        ]
-                      }
-                    },
-                    "additionalProperties": false,
-                    "required": ["title", "list"]
-                  },
-                  "guidance_exclude": {
-                    "type": "object",
-                    "description": "Content for the 'Exclude' guidance panel",
-                    "properties": {
-                      "title": {
-                        "type": "string",
-                        "description": "The title of the 'Exclude' panel",
-                        "minLength": 1,
-                        "examples": ["Exclude"]
-                      },
-                      "list": {
-                        "type": "array",
-                        "description": "A list of bullet points to show on the 'Exclude' guidance panel",
-                        "minItems": 1,
-                        "uniqueItems": true,
-                        "items": { "type": "string", "minLength": 1 },
-                        "examples": [
-                          "sports holdalls, gloves, clothing of textile materials, footwear, protective eyewear, rackets, balls, skates",
-                          "for skiing, water sports, golf, fishing",
-                          "for skiing, water sports, golf, fishing, table tennis, PE, gymnastics, athletics"
-                        ]
-                      }
-                    },
-                    "additionalProperties": false,
-                    "required": ["title", "list"]
-                  },
-                  "value_sales": {
-                    "type": "object",
-                    "description": "Content for the 'Value of Sales' answer",
-                    "properties": {
-                      "answer_code": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The unique answer code for value of sales answer",
-                        "examples": ["89929001"]
-                      },
-                      "label": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The answer label for the value of sales input",
-                        "examples": ["Value of sales"]
-                      }
-                    },
-                    "additionalProperties": false,
-                    "required": ["answer_code", "label"]
-                  },
-                  "volume_sales": {
-                    "type": "object",
-                    "description": "Content for the 'Volume of Sales' answer",
-                    "properties": {
-                      "answer_code": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The unique answer code for volume of sales answer",
-                        "examples": ["89929002"]
-                      },
-                      "label": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The answer label for the volume of sales input",
-                        "examples": ["Volume of sales"]
-                      },
-                      "unit_label": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The unit label for the volume of sales input",
-                        "examples": ["Kilogram"]
-                      }
-                    },
-                    "additionalProperties": false,
-                    "required": ["answer_code", "label", "unit_label"]
-                  },
-                  "total_volume": {
-                    "type": "object",
-                    "description": "Content for the 'Total Volume Produced' answer",
-                    "properties": {
-                      "answer_code": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The unique answer code for total volume produced answer",
-                        "examples": ["89929005"]
-                      },
-                      "label": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The answer label for the total volume produced input",
-                        "examples": ["Total volume produced"]
-                      },
-                      "unit_label": {
-                        "type": "string",
-                        "minLength": 1,
-                        "description": "The unit label for the total volume produced input",
-                        "examples": ["Kilogram"]
-                      }
-                    },
-                    "additionalProperties": false,
-                    "required": ["answer_code", "label", "unit_label"]
                   }
                 },
                 "additionalProperties": false,
-                "required": ["identifier", "name", "cn_codes", "value_sales"],
-                "dependentRequired": {
-                  "total_volume": ["volume_sales"]
-                }
+                "required": ["title", "list"]
+              },
+              "guidance_exclude": {
+                "type": "object",
+                "description": "Content for the 'Exclude' guidance panel",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "The title of the 'Exclude' panel",
+                    "minLength": 1,
+                    "examples": ["Exclude"]
+                  },
+                  "list": {
+                    "type": "array",
+                    "description": "A list of bullet points to show on the 'Exclude' guidance panel",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": { "type": "string", "minLength": 1 },
+                    "examples": [
+                      "sports holdalls, gloves, clothing of textile materials, footwear, protective eyewear, rackets, balls, skates",
+                      "for skiing, water sports, golf, fishing",
+                      "for skiing, water sports, golf, fishing, table tennis, PE, gymnastics, athletics"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["title", "list"]
+              },
+              "value_sales": {
+                "type": "object",
+                "description": "Content for the 'Value of Sales' answer",
+                "properties": {
+                  "answer_code": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The unique answer code for value of sales answer",
+                    "examples": ["89929001"]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The answer label for the value of sales input",
+                    "examples": ["Value of sales"]
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["answer_code", "label"]
+              },
+              "volume_sales": {
+                "type": "object",
+                "description": "Content for the 'Volume of Sales' answer",
+                "properties": {
+                  "answer_code": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The unique answer code for volume of sales answer",
+                    "examples": ["89929002"]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The answer label for the volume of sales input",
+                    "examples": ["Volume of sales"]
+                  },
+                  "unit_label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The unit label for the volume of sales input",
+                    "examples": ["Kilogram"]
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["answer_code", "label", "unit_label"]
+              },
+              "total_volume": {
+                "type": "object",
+                "description": "Content for the 'Total Volume Produced' answer",
+                "properties": {
+                  "answer_code": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The unique answer code for total volume produced answer",
+                    "examples": ["89929005"]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The answer label for the total volume produced input",
+                    "examples": ["Total volume produced"]
+                  },
+                  "unit_label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "The unit label for the total volume produced input",
+                    "examples": ["Kilogram"]
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["answer_code", "label", "unit_label"]
               }
+            },
+            "additionalProperties": false,
+            "required": ["identifier", "name", "cn_codes", "value_sales"],
+            "dependentRequired": {
+              "total_volume": ["volume_sales"]
             }
-          },
-          "additionalProperties": false,
-          "required": ["key_field", "values"]
+          }
         }
       },
       "additionalProperties": false,
@@ -216,5 +203,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["schema_version", "key_field", "items", "ru_ref"]
+  "required": ["schema_version", "identifier", "items"]
 }

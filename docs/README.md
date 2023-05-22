@@ -6,11 +6,11 @@ This document describes the general structure that all supplementary data sets s
 
 v1 Template: [template_v1.json](/schemas/template_v1.json)
 
-| Path                           | Description                                                                                                                                    | Mandatory |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| `schema_version`               | A constant string indicating the version of the schema specification being used.                                                               | Yes       |
-| `key_field`                    | A constant string indicating the name of the key field for the top level data. The string must exist as a top level property.                  | Yes       |
-| `items`                        | An object used to represent repeating items. For example, list of employees, companies, products etc. See: [Repeating Items](#repeating-items) | No        |
+| Path             | Description                                                                                                                                    | Mandatory |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| `schema_version` | A constant string indicating the version of the schema specification being used.                                                               | Yes       |
+| `identifier`     | The unique top-level identifier. For business surveys, this is the same value as the `ru_ref`.                                                 | Yes       |
+| `items`          | An object used to represent repeating items. For example, list of employees, companies, products etc. See: [Repeating Items](#repeating-items) | No        |
 
 At the top level, additional supplementary data can be added. However, currently only simple key value strings, objects, arrays are supported. Nested arrays and deeply nested objected are not supported at this top level.
 
@@ -25,31 +25,24 @@ Items must follow this spec:
 
 ```json
 {
-  "type": "object",
-  "properties": {
-    "<some-name>": {
-      "type": "object",
-      "properties": {
-        "key_field": {
-          "const": "identifier",
-          "description": "The name to key field for the items"
-        },
-        "values": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {},
-          }
-        }
-      },
-      "additionalProperties": false,
-      "required": ["key_field", "values"]
-    }
-  },
-  "additionalProperties": false,
-  "required": ["<some-name>"]
+	"<some-name>": {
+		"type": "array",
+		"minItems": 1,
+		"uniqueItems": true,
+		"items": {
+			"type": "object",
+			"properties": {
+				"identifier": {
+					"type": ["string", "integer"],
+					"minLength": 1,
+					"minimum": 0,
+					"description": "The unique identifier for the item"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["identifier"]
+		}
+	}
 }
 ```
-
-Data about each item is represented in `items.<some-name>.values`. Each item must have a property which match `items.<some-name>.values.key_field` property.
 

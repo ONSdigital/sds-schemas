@@ -1,36 +1,32 @@
 {
   "schema_version": "v1",
-  "key_field": "ru_ref",
-  "ru_ref": "50000035606",
+  "identifier": "50000035606",
   "items": {
-    "local_units": {
-      "key_field": "lu_ref",
-      "values": [
-        {
-          "lu_ref": "3340224",
-          "lu_name": "STUBBS BUILDING PRODUCTS LTD",
-          "lu_address": [
-            "WELLINGTON ROAD",
-            "LOCHMABEN",
-            "SWINDON",
-            "BEDS",
-            "GLOS",
-            "DE41 2WA"
-          ]
-        },
-        {
-          "lu_ref": "20047673",
-          "lu_name": "HOPSCOTCH INDUSTRIES UK LTD",
-          "lu_address": [
-            "SOUTH CERNEY WORKS",
-            "SHAWELL LANE",
-            "BEENHAM",
-            "STAFFS",
-            "BEDFORDSHIRE",
-            "GL4 5YU"
-          ]
-        }
-      ]
-    }
+    "local_units": [
+      {
+        "identifier": "3340224",
+        "lu_name": "STUBBS BUILDING PRODUCTS LTD",
+        "lu_address": [
+          "WELLINGTON ROAD",
+          "LOCHMABEN",
+          "SWINDON",
+          "BEDS",
+          "GLOS",
+          "DE41 2WA"
+        ]
+      },
+      {
+        "identifier": "20047673",
+        "lu_name": "HOPSCOTCH INDUSTRIES UK LTD",
+        "lu_address": [
+          "SOUTH CERNEY WORKS",
+          "SHAWELL LANE",
+          "BEENHAM",
+          "STAFFS",
+          "BEDFORDSHIRE",
+          "GL4 5YU"
+        ]
+      }
+    ]
   }
 }
