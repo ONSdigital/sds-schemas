@@ -1,0 +1,24 @@
+name: PR
+
+'on':
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: '${{ github.head_ref }}'
+  cancel-in-progress: true
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node dependencies
+        run: make build
+      - name: Lint JS/JSON files
+        run: make lint
+      - name: Validate JSON schemas
+        if: always()
+        run: make validate-schemas
+
