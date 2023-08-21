@@ -12,8 +12,8 @@ Schema: [roofing_tiles_and_stale.json](/schemas/roofing_tiles_and_slate.json)
 |----------------------------------|--------------------------------------------------------------------------------------------|-----------|
 | `items.local_units`              | Data about the local units                                                                 | Yes       |
 | `items.local_units[].identifier` | The identifier for the local unit. This is a string representing the local unit reference. | Yes       |
-| `items.local_units[].lu_name`    | A string representing the name of the local unit.                                          | Yes       |
-| `items.local_units[].lu_address` | An array containing fields of the address for the local unit.                              | Yes       |
+| `items.local_units[].name`       | A string representing the name of the local unit.                                          | Yes       |
+| `items.local_units[].address`    | An array containing fields of the address for the local unit.                              | Yes       |
 
 ## Examples
 

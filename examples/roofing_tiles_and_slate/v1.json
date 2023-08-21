@@ -5,8 +5,8 @@
     "local_units": [
       {
         "identifier": "3340224",
-        "lu_name": "STUBBS BUILDING PRODUCTS LTD",
-        "lu_address": [
+        "name": "STUBBS BUILDING PRODUCTS LTD",
+        "address": [
           "WELLINGTON ROAD",
           "LOCHMABEN",
           "SWINDON",
@@ -17,8 +17,8 @@
       },
       {
         "identifier": "20047673",
-        "lu_name": "HOPSCOTCH INDUSTRIES UK LTD",
-        "lu_address": [
+        "name": "HOPSCOTCH INDUSTRIES UK LTD",
+        "address": [
           "SOUTH CERNEY WORKS",
           "SHAWELL LANE",
           "BEENHAM",

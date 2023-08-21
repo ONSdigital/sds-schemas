@@ -10,7 +10,7 @@
     },
     "identifier": {
       "type": "string",
-      "description": "The unique top-level identifier. This is the reporting unit reference without the check letter appended",
+      "description": "The unique top-level identifier. This is the reporting unit reference without the check letter appended.",
       "minLength": 11,
       "pattern": "^[a-zA-Z0-9]+$",
       "examples": ["34942807969"]
@@ -49,7 +49,7 @@
               "identifier": {
                 "type": "string",
                 "minLength": 1,
-                "description": "The identifier for the product. This is the same as answer code for value of sales",
+                "description": "The identifier for the product. This is the same as answer code for value of sales.",
                 "examples": ["89929001"]
               },
               "name": {
@@ -83,8 +83,10 @@
                     "uniqueItems": true,
                     "items": { "type": "string", "minLength": 1 },
                     "examples": [
-                      "for children's playgrounds",
-                      "swimming pools and paddling pools"
+                      [
+                        "for children's playgrounds",
+                        "swimming pools and paddling pools"
+                      ]
                     ]
                   }
                 },
@@ -108,9 +110,11 @@
                     "uniqueItems": true,
                     "items": { "type": "string", "minLength": 1 },
                     "examples": [
-                      "sports holdalls, gloves, clothing of textile materials, footwear, protective eyewear, rackets, balls, skates",
-                      "for skiing, water sports, golf, fishing",
-                      "for skiing, water sports, golf, fishing, table tennis, PE, gymnastics, athletics"
+                      [
+                        "sports holdalls, gloves, clothing of textile materials, footwear, protective eyewear, rackets, balls, skates",
+                        "for skiing, water sports, golf, fishing",
+                        "for skiing, water sports, golf, fishing, table tennis, PE, gymnastics, athletics"
+                      ]
                     ]
                   }
                 },
