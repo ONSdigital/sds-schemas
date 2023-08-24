@@ -1,0 +1,26 @@
+{
+  "schema_version": "v1",
+  "identifier": "34942807969",
+  "items": {
+    "employees": [
+      {
+        "identifier": "3340224",
+        "check_letter": "A",
+        "name": "JOHN DOE",
+        "work_identifier": "001",
+        "dist_number": "0001",
+        "employer_ref": "001",
+        "work_postcode": "SW1A 2AA"
+      },
+      {
+        "identifier": "5567890",
+        "check_letter": "B",
+        "name": "JANE DOE",
+        "work_identifier": "002",
+        "dist_number": "0002",
+        "employer_ref": "001",
+        "work_postcode": "EC2R 8AH"
+      }
+    ]
+  }
+}

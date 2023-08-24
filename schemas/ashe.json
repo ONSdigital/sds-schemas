@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ashe.json",
+  "title": "SDS schema for the ASHE survey",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "v1",
+      "description": "Version of the schema spec"
+    },
+    "identifier": {
+      "type": "string",
+      "description": "The unique top-level identifier. This is the Special Arrangements number.",
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9]+$",
+      "examples": ["34942807969"]
+    },
+    "items": {
+      "type": "object",
+      "properties": {
+        "employees": {
+          "type": "array",
+          "description": "The data about each item",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The unique identifier for the items. This is the employee serial number.",
+                "examples": ["3340224"]
+              },
+              "check_letter": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Value used for reconciliation downstream."
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The name of the employee",
+                "examples": ["JOHN DOE"]
+              },
+              "work_identifier": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The unique identifier for the workplace.",
+                "examples": ["001"]
+              },
+              "dist_number": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The dist no.",
+                "examples": ["0001"]
+              },
+              "employer_ref": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The employer reference number.",
+                "examples": ["001"]
+              },
+              "work_postcode": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The postcode of the workplace.",
+                "pattern": "^[ a-zA-Z0-9]+$",
+                "examples": ["SW1A 2AA"]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "identifier",
+              "check_letter",
+              "name",
+              "dist_number",
+              "employer_ref"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": ["employees"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["schema_version", "identifier", "items"]
+}

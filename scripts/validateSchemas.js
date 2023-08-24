@@ -23,6 +23,7 @@ const schemaDefinitionJsonToExamplesGlob = {
   "schemas/prodcom.json": "examples/prodcom/*.json",
   "schemas/roofing_tiles_and_slate.json":
     "examples/roofing_tiles_and_slate/*.json",
+  "schemas/ashe.json": "examples/ashe/*.json",
 };
 
 const validateSchemaForFile = (fileName, baseSchema) => {
