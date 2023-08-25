@@ -30,6 +30,7 @@ Documentation can be found in [docs/](./docs).
 - [Main README](docs/README.md)
 - [Prodcom README](docs/prodcom.md)
 - [Roofing Tiles and Slate README](docs/roofing_tiles_and_slate.md)
+- [BRES and BRS README](docs/bres_and_brs.md)
 - [JSON Schema Definitions](schemas)
 - [JSON Examples (Unit Data)](examples)
 
@@ -49,10 +50,16 @@ The supplementary data JSON schemas can be validated using JSON Schema definitio
 make build
 ```
 
-**Validate all examples schemas**
+**Validate all examples schemas including inline examples**
 
 ```bash
 ./scripts/validateSchemas.js
+```
+
+**Validate inline schema examples**
+
+```bash
+./scripts/validateSchemas.js <json-schema-file>
 ```
 
 **Validate a single file or folder**
