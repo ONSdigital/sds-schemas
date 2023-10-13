@@ -48,7 +48,7 @@ Documentation can be found in [docs/](./docs).
 
 The supplementary data JSON schemas can be validated using JSON Schema definitions. The JSON schemas are defined using [Draft 2020-12](https://json-schema.org/specification-links.html#2020-12) and are validated via [AJV](https://ajv.js.org/).
 
-_Note: Each JSON schema is self-sufficient and has no external or internal references. Although this does create duplication in the schema, it avoids requiring SDS from needing to resolve the schema references which has a greater overhead than some duplication. This can be revisited in future whereby, the publisher resolves it before it gets to SDS or SDS resolves it before serving it back to Author._
+** Note: Each JSON schema is self-sufficient and has no external or internal references. Although this does create duplication in the schema, it avoids requiring SDS from needing to resolve the schema references which has a greater overhead than some duplication. This can be revisited in future whereby, the publisher resolves it before it gets to SDS or SDS resolves it before serving it back to Author. **
 
 ### Prerequisites
 
