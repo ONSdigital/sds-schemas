@@ -11,17 +11,19 @@ This project holds the documentation and JSON schema definitions for the surveys
 
 ## Supported Surveys
 
-| Survey Name   | Survey ID |
-|---------------|-----------|
-| Prodcom       | 014       |
-| PPI           | 132       |
-| EPI           | 133       |
-| IPI           | 156       |
-| ASHE          | 141       |
-| BRES          | 221       |
-| BRS           | 241       |
-| Roofing Tiles | 068       |
-| Slate         | 071       |
+| Survey Name                    | Survey ID |
+| ------------------------------ | --------- |
+| Prodcom                        | 014       |
+| PPI                            | 132       |
+| EPI                            | 133       |
+| IPI                            | 156       |
+| ASHE                           | 141       |
+| BRES                           | 221       |
+| BRS                            | 241       |
+| Roofing Tiles                  | 068       |
+| Slate                          | 071       |
+| Sand & Gravel (Land Won)       | 066       |
+| Sand & Gravel (Marine Dredged) | 076       |
 
 ## Docs
 
@@ -38,9 +40,10 @@ Documentation can be found in [docs/](./docs).
 
 The supplementary data JSON schemas can be validated using JSON Schema definitions. The JSON schemas are defined using [Draft 2020-12](https://json-schema.org/specification-links.html#2020-12) and are validated via [AJV](https://ajv.js.org/).
 
-*Note: Each JSON schema is self-sufficient and has no external or internal references. Although this does create duplication in the schema, it avoids requiring SDS from needing to resolve the schema references which has a greater overhead than some duplication. This can be revisited in future whereby, the publisher resolves it before it gets to SDS or SDS resolves it before serving it back to Author.*
+_Note: Each JSON schema is self-sufficient and has no external or internal references. Although this does create duplication in the schema, it avoids requiring SDS from needing to resolve the schema references which has a greater overhead than some duplication. This can be revisited in future whereby, the publisher resolves it before it gets to SDS or SDS resolves it before serving it back to Author._
 
 ### Prerequisites
+
 - Node installed matching the version specified in `.nvmrc`. It is recommended that you use [nvm](https://github.com/nvm-sh/nvm) to manage your Node versions.
 - [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (JS package and dependency manager)
 
@@ -69,26 +72,27 @@ make build
 ```
 
 For example:
+
 ```bash
 ./scripts/validateSchemas.js schemas/prodcom.json examples/prodcom/v1.json
 ```
 
 Help:
+
 ```bash
 ./scripts/validateSchemas.js --help
 ```
 
-
 ## Development
 
 Format JSON/JS files
+
 ```bash
 make format
 ```
 
 Lint JSON/JS files
+
 ```bash
 make lint
 ```
-
-
