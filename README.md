@@ -11,7 +11,7 @@ This project holds the documentation and JSON schema definitions for the surveys
 
 ## Supported Surveys
 
-Please note that the below surveys are given in the mapping/survey_map.json file which is used by the live SDS application.
+Please note that the below surveys are given in the [mapping/survey_map.json](mapping/survey_map.json) file which is used by the live SDS application.
 Any changes to the survey_map.json file will impact the SDS application - hence any changes must be signed off by the owners
 given here - https://github.com/ONSdigital/sds-schema-definitions/blob/main/.github/CODEOWNERS.
 
