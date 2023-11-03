@@ -39,7 +39,7 @@ Documentation can be found in [docs/](./docs).
 
 - [Main README](docs/README.md)
 - [Prodcom README](docs/prodcom.md)
-- [Roofing Tiles and Slate README](docs/roofing_tiles_and_slate.md)
+- [Roofing Tiles + Slate + Sand and Gravel README](docs/roofing_tiles_slate_sand_and_gravel.md)
 - [BRES and BRS README](docs/bres_and_brs.md)
 - [JSON Schema Definitions](schemas)
 - [JSON Examples (Unit Data)](examples)
