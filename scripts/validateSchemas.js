@@ -24,8 +24,8 @@ const ajvValidator = () => {
 
 const schemaDefinitionJsonToExamplesGlob = {
   "schemas/prodcom.json": "examples/prodcom/*.json",
-  "schemas/roofing_tiles_and_slate.json":
-    "examples/roofing_tiles_and_slate/*.json",
+  "schemas/roofing_tiles_slate_sand_and_gravel.json":
+    "examples/roofing_tiles_slate_sand_and_gravel/*.json",
   "schemas/bres_and_brs.json": "examples/bres_and_brs/*.json",
 };
 
