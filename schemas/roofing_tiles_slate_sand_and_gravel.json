@@ -17,8 +17,11 @@
     },
     "items": {
       "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9\\-]*[a-z0-9]$"
+      },
       "properties": {
-        "local_units": {
+        "local-units": {
           "type": "array",
           "description": "The data about each item",
           "minItems": 1,
@@ -65,7 +68,7 @@
         }
       },
       "additionalProperties": false,
-      "required": ["local_units"]
+      "required": ["local-units"]
     }
   },
   "additionalProperties": false,
