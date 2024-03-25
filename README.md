@@ -82,7 +82,7 @@ make build
 For example:
 
 ```bash
-./scripts/validateSchemas.js schemas/prodcom.json examples/prodcom/v1.json
+./scripts/validateSchemas.js schemas/prodcom.json examples/prodcom/12345678901.json
 ```
 
 Help:

@@ -228,7 +228,7 @@ if (esMain(import.meta)) {
     .example("./scripts/validateExampleSchemas.js")
     .example("./scripts/validateExampleSchemas.js schemas/prodcom.json ")
     .example(
-      "./scripts/validateExampleSchemas.js schemas/prodcom.json examples/prodcom/v1.json"
+      "./scripts/validateExampleSchemas.js schemas/prodcom.json examples/prodcom/12345678901.json"
     )
     .command(
       "$0",
