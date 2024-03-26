@@ -4,7 +4,7 @@ This document describes the schema for the Prodcom survey.
 
 ## Schema
 
-Schema: [prodcom.json](/schemas/prodcom.json)
+Schema v1: [prodcom.json](/schemas/v1/prodcom.json)
 
 **The table below only describes data that is survey specific. The generic structure of supplementary data is documented in [README.md](/docs/README.md)**
 

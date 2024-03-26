@@ -4,7 +4,7 @@ This document describes the schema for the BRES + BRS survey.
 
 ## Schema
 
-Schema: [bres_and_brs.json](/schemas/bres_and_brs.json)
+Schema v1: [bres_and_brs.json](/schemas/v1/bres_and_brs.json)
 
 **The table below only describes data that is survey specific. The generic structure of supplementary data is documented in [README.md](/docs/README.md)**
 

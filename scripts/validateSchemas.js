@@ -23,10 +23,10 @@ const ajvValidator = () => {
 };
 
 const schemaDefinitionJsonToExamplesGlob = {
-  "schemas/prodcom.json": "examples/prodcom/*.json",
-  "schemas/roofing_tiles_slate.json": "examples/roofing_tiles_slate/*.json",
-  "schemas/sand_and_gravel.json": "examples/sand_and_gravel/*.json",
-  "schemas/bres_and_brs.json": "examples/bres_and_brs/*.json",
+  "schemas/v1/prodcom.json": "examples/prodcom/*.json",
+  "schemas/v1/roofing_tiles_slate.json": "examples/roofing_tiles_slate/*.json",
+  "schemas/v1/sand_and_gravel.json": "examples/sand_and_gravel/*.json",
+  "schemas/v1/bres_and_brs.json": "examples/bres_and_brs/*.json",
 };
 
 // Recursive function for validating examples against their respective schemas
@@ -226,9 +226,9 @@ if (esMain(import.meta)) {
       `Usage: ./scripts/validateSchemas.js <optional: json-schema-file> <optional: json-file-or-folder-to-validate>`
     )
     .example("./scripts/validateExampleSchemas.js")
-    .example("./scripts/validateExampleSchemas.js schemas/prodcom.json ")
+    .example("./scripts/validateExampleSchemas.js schemas/v1/prodcom.json ")
     .example(
-      "./scripts/validateExampleSchemas.js schemas/prodcom.json examples/prodcom/12345678901.json"
+      "./scripts/validateExampleSchemas.js schemas/v1/prodcom.json examples/prodcom/v1.json"
     )
     .command(
       "$0",
