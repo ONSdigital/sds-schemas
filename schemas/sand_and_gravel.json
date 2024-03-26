@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "roofing_tiles_slate_sand_and_gravel.json",
+  "$id": "sand_and_gravel.json",
   "title": "SDS schema for the Sand and Gravel surveys",
   "type": "object",
   "properties": {
