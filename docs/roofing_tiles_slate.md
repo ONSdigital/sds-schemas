@@ -4,7 +4,7 @@ This document describes the schema for the Roofing Tiles + Slate surveys.
 
 ## Schema
 
-Schema v1: [roofing_tiles_slate.json](/schemas/v1/roofing_tiles_slate.json)
+Schema v1: [v1.json](/schemas/roofing_tiles_slate/v1.json)
 
 **The table below only describes data that is survey specific. The generic structure of supplementary data is documented in [README.md](/docs/README.md)**
 

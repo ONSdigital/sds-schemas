@@ -4,7 +4,7 @@ This document describes the schema for the Sand and Gravel surveys.
 
 ## Schema
 
-Schema v1: [sand_and_gravel.json](/schemas/v1/sand_and_gravel.json)
+Schema v1: [v1.json](/schemas/sand_and_gravel/v1.json)
 
 **The table below only describes data that is survey specific. The generic structure of supplementary data is documented in [README.md](/docs/README.md)**
 

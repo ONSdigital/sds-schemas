@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "prodcom.json",
+  "$id": "v1.json",
   "title": "SDS schema for the PRODCOM survey",
   "type": "object",
   "properties": {
