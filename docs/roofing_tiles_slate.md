@@ -1,10 +1,10 @@
-# Roofing Tiles + Slate + Sand and Gravel Survey SDS Schema
+# Roofing Tiles + Slate Survey SDS Schema
 
-This document describes the schema for the Roofing Tiles + Slate + Sand and Gravel surveys.
+This document describes the schema for the Roofing Tiles + Slate surveys.
 
 ## Schema
 
-Schema: [roofing_tiles_slate_sand_and_gravel.json](/schemas/roofing_tiles_slate_sand_and_gravel.json)
+Schema v1: [v1.json](/schemas/roofing_tiles_slate/v1.json)
 
 **The table below only describes data that is survey specific. The generic structure of supplementary data is documented in [README.md](/docs/README.md)**
 
@@ -17,4 +17,4 @@ Schema: [roofing_tiles_slate_sand_and_gravel.json](/schemas/roofing_tiles_slate_
 
 ## Examples
 
-Examples can be found at [examples/roofing_tiles_slate_sand_and_gravel](/examples/roofing_tiles_slate_sand_and_gravel).
+Examples can be found at [examples/roofing_tiles_slate](/examples/roofing_tiles_slate).

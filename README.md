@@ -39,7 +39,8 @@ Documentation can be found in [docs/](./docs).
 
 - [Main README](docs/README.md)
 - [Prodcom README](docs/prodcom.md)
-- [Roofing Tiles + Slate + Sand and Gravel README](docs/roofing_tiles_slate_sand_and_gravel.md)
+- [Roofing Tiles + Slate README](docs/roofing_tiles_slate)
+- [Sand and Gravel README](docs/sand_and_gravel)
 - [BRES and BRS README](docs/bres_and_brs.md)
 - [JSON Schema Definitions](schemas)
 - [JSON Examples (Unit Data)](examples)
@@ -82,7 +83,7 @@ make build
 For example:
 
 ```bash
-./scripts/validateSchemas.js schemas/prodcom.json examples/prodcom/v1.json
+./scripts/validateSchemas.js schemas/prodcom/v1.json examples/prodcom/v1.json
 ```
 
 Help:
