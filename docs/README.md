@@ -4,13 +4,15 @@ This document describes the general structure that all supplementary data sets s
 
 ## Schema
 
-v1 Template: [template_v1.json](/schemas/template_v1.json)
+v1 Template: [template_v1.json](/schemas/template_v1.json)   
+v2 Template: [template_v2.json](/schemas/template_v2.json)
 
-| Path             | Description                                                                                                                                    | Mandatory |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| `schema_version` | A constant string indicating the version of the schema specification being used.                                                               | Yes       |
-| `identifier`     | The unique top-level identifier. For business surveys, this is the same value as the `ru_ref`.                                                 | Yes       |
-| `items`          | An object used to represent repeating items. For example, list of employees, companies, products etc. See: [Repeating Items](#repeating-items) | No        |
+| Path             | Description                                                                                                                                   | Mandatory         |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| `schema_version` | A constant string indicating the version of the schema specification being used.                                                              | Yes               |
+| `identifier`     | The unique top-level identifier. For business surveys, this is the same value as the `ru_ref`.                                                | Yes               |
+| `items`          | An object used to represent repeating items. For example, list of employees, companies, products etc. See: [Repeating Items](#repeating-items)             | No                |
+| `survey_id`      | The identifier for a particular survey                                                                                                        | Yes (Only for v2) |
 
 At the top level, additional supplementary data can be added. However, currently only simple key value strings, objects, arrays are supported. Nested arrays and deeply nested objected are not supported at this top level.
 
