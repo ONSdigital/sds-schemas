@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "v1.json",
-  "title": "SDS schema for the BRES + BRS survey",
+  "title": "SDS schema for the BRES survey",
   "type": "object",
   "properties": {
     "schema_version": {
@@ -118,6 +118,7 @@
               "business_description": {
                 "type": "string",
                 "minLength": 1,
+                "maxLength": 100,
                 "description": "The business description for the local unit",
                 "examples": ["PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES"]
               },
