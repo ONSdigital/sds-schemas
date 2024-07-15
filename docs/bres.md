@@ -25,7 +25,6 @@ Schema v2: [v2.json](/schemas/bres/v2.json)
 | `items.local-units[].trading_name`         | The "trading as" name for the local unit.                                                                      | No        |
 | `items.local-units[].business_description` | The business description for the local unit.                                                                   | Yes       |  
 | `items.local-units[].address`              | An array containing fields of the address for the local unit. At least 1 address line and Postcode will exist. | Yes       |
-| `survey_id`                                | The identifier for a particular survey (Only for v2)                                                           | Yes       |
 
 ## Examples
 

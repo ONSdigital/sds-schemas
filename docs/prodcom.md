@@ -34,7 +34,6 @@ Schema v2: [v2.json](/schemas/prodcom/v2.json)
 | `items.products[].total_volume.answer_code`  | Answer code for the total volume produced of a product                   | Yes                             |
 | `items.products[].total_volume.label`        | Label for the total volume produced of a product                         | Yes                             |
 | `items.products[].total_volume.unit_label`   | Unit label for the total volume produced of a product                    | Yes                             |
-| `survey_id`                                  | The identifier for a particular survey (Only for v2)                     | Yes                             |
 
 
 ## Examples

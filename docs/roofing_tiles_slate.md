@@ -15,7 +15,6 @@ Schema v2: [v2.json](/schemas/roofing_tiles_slate/v2.json)
 | `items.local-units[].identifier` | The identifier for the local unit. This is a string representing the local unit reference. | Yes       |
 | `items.local-units[].name`       | A string representing the name of the local unit.                                          | Yes       |
 | `items.local-units[].address`    | An array containing fields of the address for the local unit.                              | Yes       |
-| `survey_id`                      | The identifier for a particular survey (Only for v2)                                       | Yes       |
 ## Examples
 
 Examples can be found at [examples/roofing_tiles_slate](../examples/roofing_tiles_slate).

@@ -22,7 +22,13 @@ const ajvValidator = () => {
   return ajv;
 };
 
-const schemaDefinitionJsonToExamplesGlob = {
+
+const schemas = fs.readdirSync("schemas");
+const examples = fs.readdirSync("examples");
+console.log(schemas);
+console.log(examples);
+
+const schemaDefinitionJsonToExamples = {
   "schemas/prodcom/v1.json": "examples/prodcom/v1.json",
   "schemas/roofing_tiles_slate/v1.json": "examples/roofing_tiles_slate/v1.json",
   "schemas/sand_and_gravel/v1.json": "examples/sand_and_gravel/v1.json",
@@ -240,7 +246,7 @@ if (esMain(import.meta)) {
       (opt) => {
         opt.positional("json-schema-definition-file", {
           describe: `The JSON schema files to use for validation. One of: ${Object.keys(
-            schemaDefinitionJsonToExamplesGlob
+            schemaDefinitionJsonToExamples
           )}`,
         });
         opt.positional("json-file-or-folder-to-validate", {
@@ -256,20 +262,20 @@ if (esMain(import.meta)) {
           schemasMap[schemaDefinitionFile] = schemaFileOrGlob;
         } else if (schemaDefinitionFile) {
           schemasMap[schemaDefinitionFile] =
-            schemaDefinitionJsonToExamplesGlob[schemaDefinitionFile];
+            schemaDefinitionJsonToExamples[schemaDefinitionFile];
         } else {
-          schemasMap = schemaDefinitionJsonToExamplesGlob;
+          schemasMap = schemaDefinitionJsonToExamples;
         }
 
         let anyFailed = false;
 
         for (const schemaDefinitionFile in schemasMap) {
-          if (!(schemaDefinitionFile in schemaDefinitionJsonToExamplesGlob)) {
+          if (!(schemaDefinitionFile in schemaDefinitionJsonToExamples)) {
             console.error(
               foregroundRed,
               `Invalid JSON Schema Definition File ${schemaDefinitionFile}. Schema file must be one of:`
             );
-            console.dir(Object.keys(schemaDefinitionJsonToExamplesGlob));
+            console.dir(Object.keys(schemaDefinitionJsonToExamples));
             console.log(`Help: ./scripts/validateSchemas.js --help`);
             process.exit(1);
           }
