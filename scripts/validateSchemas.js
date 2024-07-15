@@ -22,12 +22,6 @@ const ajvValidator = () => {
   return ajv;
 };
 
-
-const schemas = fs.readdirSync("schemas");
-const examples = fs.readdirSync("examples");
-console.log(schemas);
-console.log(examples);
-
 const schemaDefinitionJsonToExamples = {
   "schemas/prodcom/v1.json": "examples/prodcom/v1.json",
   "schemas/roofing_tiles_slate/v1.json": "examples/roofing_tiles_slate/v1.json",
