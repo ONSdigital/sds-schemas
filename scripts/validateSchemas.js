@@ -22,11 +22,15 @@ const ajvValidator = () => {
   return ajv;
 };
 
-const schemaDefinitionJsonToExamplesGlob = {
-  "schemas/prodcom/v1.json": "examples/prodcom/*.json",
-  "schemas/roofing_tiles_slate/v1.json": "examples/roofing_tiles_slate/*.json",
-  "schemas/sand_and_gravel/v1.json": "examples/sand_and_gravel/*.json",
-  "schemas/bres_and_brs/v1.json": "examples/bres_and_brs/*.json",
+const schemaDefinitionJsonToExamples = {
+  "schemas/prodcom/v1.json": "examples/prodcom/v1.json",
+  "schemas/roofing_tiles_slate/v1.json": "examples/roofing_tiles_slate/v1.json",
+  "schemas/sand_and_gravel/v1.json": "examples/sand_and_gravel/v1.json",
+  "schemas/bres/v1.json": "examples/bres/v1.json",
+  "schemas/prodcom/v2.json": "examples/prodcom/v2.json",
+  "schemas/roofing_tiles_slate/v2.json": "examples/roofing_tiles_slate/v2.json",
+  "schemas/sand_and_gravel/v2.json": "examples/sand_and_gravel/v2.json",
+  "schemas/bres/v2.json": "examples/bres/v2.json",
 };
 
 // Recursive function for validating examples against their respective schemas
@@ -236,7 +240,7 @@ if (esMain(import.meta)) {
       (opt) => {
         opt.positional("json-schema-definition-file", {
           describe: `The JSON schema files to use for validation. One of: ${Object.keys(
-            schemaDefinitionJsonToExamplesGlob
+            schemaDefinitionJsonToExamples
           )}`,
         });
         opt.positional("json-file-or-folder-to-validate", {
@@ -252,20 +256,20 @@ if (esMain(import.meta)) {
           schemasMap[schemaDefinitionFile] = schemaFileOrGlob;
         } else if (schemaDefinitionFile) {
           schemasMap[schemaDefinitionFile] =
-            schemaDefinitionJsonToExamplesGlob[schemaDefinitionFile];
+            schemaDefinitionJsonToExamples[schemaDefinitionFile];
         } else {
-          schemasMap = schemaDefinitionJsonToExamplesGlob;
+          schemasMap = schemaDefinitionJsonToExamples;
         }
 
         let anyFailed = false;
 
         for (const schemaDefinitionFile in schemasMap) {
-          if (!(schemaDefinitionFile in schemaDefinitionJsonToExamplesGlob)) {
+          if (!(schemaDefinitionFile in schemaDefinitionJsonToExamples)) {
             console.error(
               foregroundRed,
               `Invalid JSON Schema Definition File ${schemaDefinitionFile}. Schema file must be one of:`
             );
-            console.dir(Object.keys(schemaDefinitionJsonToExamplesGlob));
+            console.dir(Object.keys(schemaDefinitionJsonToExamples));
             console.log(`Help: ./scripts/validateSchemas.js --help`);
             process.exit(1);
           }

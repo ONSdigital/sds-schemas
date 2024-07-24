@@ -1,12 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "v1.json",
-  "title": "SDS schema for the BRES + BRS survey",
+  "$id": "v2.json",
+  "title": "SDS schema for the BRES survey",
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "v1",
+      "const": "v2",
       "description": "Version of the schema spec"
+    },
+    "survey_id": {
+      "type": "string",
+      "description": "The identifier for a particular survey",
+      "enum": ["221"]
     },
     "identifier": {
       "type": "string",
@@ -118,6 +123,7 @@
               "business_description": {
                 "type": "string",
                 "minLength": 1,
+                "maxLength": 100,
                 "description": "The business description for the local unit",
                 "examples": ["PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES"]
               },
@@ -157,5 +163,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["schema_version", "identifier", "items", "address"]
+  "required": ["schema_version", "identifier", "items", "address", "survey_id"]
 }
