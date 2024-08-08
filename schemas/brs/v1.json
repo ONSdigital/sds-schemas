@@ -89,37 +89,20 @@
         ]
       ]
     },
-    "items": {
-      "type": "object",
-      "propertyNames": {
-        "pattern": "^[a-z0-9][a-z0-9\\-]*[a-z0-9]$"
-      },
-      "properties": {
-        "local-units": {
-          "type": "array",
-          "description": "The data about each item",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "type": "object",
-            "properties": {
-              "business_description": {
-                "type": "string",
-                "minLength": 1,
-                "maxLength": 100,
-                "description": "The business description for the local unit",
-                "examples": ["PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES"]
-              }
-            },
-            "additionalProperties": false,
-            "required": ["business_description"]
-          }
-        }
-      },
-      "additionalProperties": false,
-      "required": ["local-units"]
+    "business_description": {
+      "type": "string",
+      "description": "The business description for the local unit",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES"]
     }
   },
   "additionalProperties": false,
-  "required": ["schema_version", "identifier", "items", "address", "survey_id"]
+  "required": [
+    "schema_version",
+    "identifier",
+    "business_description",
+    "address",
+    "survey_id"
+  ]
 }

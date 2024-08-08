@@ -18,11 +18,5 @@
     "BEDFORDSHIRE",
     "GL4 5YU"
   ],
-  "items": {
-    "local-units": [
-      {
-        "business_description": "PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES"
-      }
-    ]
-  }
+  "business_description": "PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES"
 }
