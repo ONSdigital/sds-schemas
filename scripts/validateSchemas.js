@@ -31,7 +31,7 @@ const schemaDefinitionJsonToExamples = {
   "schemas/roofing_tiles_slate/v2.json": "examples/roofing_tiles_slate/v2.json",
   "schemas/sand_and_gravel/v2.json": "examples/sand_and_gravel/v2.json",
   "schemas/bres/v2.json": "examples/bres/v2.json",
-  "schemas/brs/v1.json": "examples/brs/v1.json",
+  "schemas/brs/v2.json": "examples/brs/v2.json",
 };
 
 // Recursive function for validating examples against their respective schemas
