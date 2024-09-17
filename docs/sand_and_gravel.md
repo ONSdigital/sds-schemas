@@ -4,8 +4,15 @@ This document describes the schema for the Sand and Gravel surveys.
 
 ## Schema
 
-Schema v1: [v1.json](/schemas/sand_and_gravel/v1.json)   
-Schema v2: [v2.json](/schemas/sand_and_gravel/v2.json)   
+### Sand and Gravel (Land Won)
+
+Schema v1: [v1.json](/schemas/sand_and_gravel_land_won/v1.json)
+Schema v2: [v2.json](/schemas/sand_and_gravel_land_won/v2.json)
+
+### Sand and Gravel (Marine Dredged)
+
+Schema v1: [v1.json](/schemas/sand_and_gravel_marine_dredged/v1.json)
+Schema v2: [v2.json](/schemas/sand_and_gravel_marine_dredged/v2.json)
 
 **The table below only describes data that is survey specific. The generic structure of supplementary data is documented in [README.md](/docs/README.md)**
 
