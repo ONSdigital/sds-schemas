@@ -1,17 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "v2.json",
-  "title": "SDS schema for the Sand and Gravel surveys",
+  "$id": "v1.json",
+  "title": "SDS schema for the Roofing Tiles survey",
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "v2",
+      "const": "v1",
       "description": "Version of the schema spec"
-    },
-    "survey_id": {
-      "type": "string",
-      "description": "The identifier for a particular survey",
-      "enum": ["066", "076"]
     },
     "identifier": {
       "type": "string",
@@ -38,13 +33,13 @@
                 "type": "string",
                 "minLength": 1,
                 "description": "The unique identifier for the items. This is the local unit reference.",
-                "examples": ["6122875"]
+                "examples": ["3340224"]
               },
               "name": {
                 "type": "string",
                 "minLength": 1,
                 "description": "Name of the local unit",
-                "examples": ["SAND REFERRAL INDUSTRIES UK LTD"]
+                "examples": ["STUBBS BUILDING PRODUCTS LTD"]
               },
               "address": {
                 "type": "array",
@@ -57,11 +52,12 @@
                 "uniqueItems": true,
                 "examples": [
                   [
-                    "SAND & GRAVEL PARK INDUSTRIAL ESTATE",
-                    "CHELTENHAM",
+                    "WELLINGTON ROAD",
+                    "LOCHMABEN",
                     "SWINDON",
-                    "GLOUCESTERSHIRE",
-                    "GL11 1AA"
+                    "BEDS",
+                    "GLOS",
+                    "DE41 2WA"
                   ]
                 ]
               }
@@ -76,5 +72,5 @@
     }
   },
   "additionalProperties": false,
-  "required": ["schema_version", "identifier", "items", "survey_id"]
+  "required": ["schema_version", "identifier", "items"]
 }
