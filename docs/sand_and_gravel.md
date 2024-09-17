@@ -25,4 +25,4 @@ Schema v2: [v2.json](/schemas/sand_and_gravel_marine_dredged/v2.json)
 
 ## Examples
 
-Examples can be found at [examples/sand_and_gravel](../examples/sand_and_gravel).
+Examples can be found at [examples/sand_and_gravel_land_won](../examples/sand_and_gravel_land_won) and [examples/sand_and_gravel_marine_dredged](../examples/sand_and_gravel_marine_dredged).

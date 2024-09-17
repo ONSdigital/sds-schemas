@@ -25,4 +25,4 @@ Schema v2: [v2.json](/schemas/roofing_tiles/v2.json)
 
 ## Examples
 
-Examples can be found at [examples/roofing_tiles_slate](../examples/roofing_tiles_slate).
+Examples can be found at [examples/slate](../examples/slate) and [examples/roofing_tiles](../examples/roofing_tiles).
