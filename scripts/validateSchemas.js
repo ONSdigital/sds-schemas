@@ -24,12 +24,20 @@ const ajvValidator = () => {
 
 const schemaDefinitionJsonToExamples = {
   "schemas/prodcom/v1.json": "examples/prodcom/v1.json",
-  "schemas/roofing_tiles_slate/v1.json": "examples/roofing_tiles_slate/v1.json",
-  "schemas/sand_and_gravel/v1.json": "examples/sand_and_gravel/v1.json",
+  "schemas/slate/v1.json": "examples/slate/v1.json",
+  "schemas/roofing_tiles/v1.json": "examples/roofing_tiles/v1.json",
+  "schemas/sand_and_gravel_land_won/v1.json":
+    "examples/sand_and_gravel_land_won/v1.json",
+  "schemas/sand_and_gravel_marine_dredged/v1.json":
+    "examples/sand_and_gravel_marine_dredged/v1.json",
   "schemas/bres/v1.json": "examples/bres/v1.json",
   "schemas/prodcom/v2.json": "examples/prodcom/v2.json",
-  "schemas/roofing_tiles_slate/v2.json": "examples/roofing_tiles_slate/v2.json",
-  "schemas/sand_and_gravel/v2.json": "examples/sand_and_gravel/v2.json",
+  "schemas/slate/v2.json": "examples/slate/v2.json",
+  "schemas/roofing_tiles/v2.json": "examples/roofing_tiles/v2.json",
+  "schemas/sand_and_gravel_land_won/v2.json":
+    "examples/sand_and_gravel_land_won/v2.json",
+  "schemas/sand_and_gravel_marine_dredged/v2.json":
+    "examples/sand_and_gravel_marine_dredged/v2.json",
   "schemas/bres/v2.json": "examples/bres/v2.json",
   "schemas/brs/v2.json": "examples/brs/v2.json",
 };
